@@ -5,14 +5,12 @@ export GOARCH=amd64
 ## build server, cross platform
 cd pkg/server
 go clean
-#go build -a --ldflags '-extldflags "-static"' -tags netgo -installsuffix netgo .
 go build -o server mock_scheduler.go
 cd -
 
 ## build client, cross platform
 cd pkg/client
 go clean
-#go build -a --ldflags '-extldflags "-static"' -tags netgo -installsuffix netgo .
 go build -o client uscheduler_client.go
 cd -
 
